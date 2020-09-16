@@ -5,8 +5,8 @@ class Contact extends Component {
         return (
             <div>
                 <h2>Contact</h2>
-                <p>phone number</p>
-                <p>email address</p>
+                <p>1-800-wemakeskits</p>
+                <p>reactingActors87@react.com</p>
             </div>
         )
     }
