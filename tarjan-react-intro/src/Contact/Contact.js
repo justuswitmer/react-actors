@@ -10,7 +10,12 @@ class Contact extends Component {
 
     joinUs = () => {
         console.log('in joinUs');
-        alert('Thanks for joining!')
+        alert(`Thanks for joining us ${this.state.firstName}!`);
+        this.setState({
+            firstName: '',
+            lastName: '',
+            bestImpression: ''
+        });
     } // end joinUs
 
     firstName = (event) => {
@@ -34,15 +39,21 @@ class Contact extends Component {
         });
     }
 
+    emptyFields = () => {
+        document.getElementById("emptyInputFields").reset();
+    }
+
 
     render() {
         return (
             <div>
                 <h2>Contact</h2>
-                <input type="text" placeholder="First Name" onChange={this.firstName} />
-                <input type="text" placeholder="Last Name" onChange={this.lastName} />
-                <input type="text" placeholder="Best Impression" onChange={this.bestImpression} />
-                <button onClick={this.joinUs}>Join Us!</button>
+                <form id="emptyInputFields">
+                    <input type="text" placeholder="First Name" onChange={this.firstName} />
+                    <input type="text" placeholder="Last Name" onChange={this.lastName} />
+                    <input type="text" placeholder="Best Impression" onChange={this.bestImpression} />
+                    <button onClick={this.joinUs}>Join Us!</button>
+                </form>
                 <p>{this.state.firstName} {this.state.lastName}'s Best Impression is {this.state.bestImpression}</p>
                 <p>1-800-wemakeskits</p>
                 <p>reactingActors87@react.com</p>
